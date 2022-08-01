@@ -1,2 +1,33 @@
 MainWidget:
 
+<MainWidget>
+    cols:1
+    GridLayout:
+        orientation:"lr-tb"
+        rows: 10
+        Button: #click button to start timer
+            text:"ClickHere!!"
+            on_press: root.on_button_click() #the function
+
+        Switch: #maybe put in a switch, not sure
+            id: my_switch
+            on_active: root.on_switch_active (self)
+            size_hint: None, 1
+            width: "100dp"
+            active: True #starting state, or default state is active
+
+        TextInput:#add box for time input
+            id: enter_time
+            size_hint: None, 1
+            width: "100dp" #keep width of this section of the widget
+            text: "enter Time Here" #default text
+        Label:
+            text: enter_time.text #Label linked to the text in the TextInput box
+
+        Label:
+            text: "Will display the countdown timer when completed"
+            font_name: "Font.ttf" 
+                                #font stored in this file, the directory from the project folder is required if stored in folder withing folder, but I have put in the main folder... for now
+            font_size: "80dp"
+            color: 1, .5, 1, 1
+          
